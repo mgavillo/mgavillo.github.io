@@ -12,12 +12,12 @@ export const Header: FunctionComponent = () => {
     var r = document.querySelector(':root') as HTMLElement | null;
     if(!r) return
     if(night){
-        r.style.setProperty('--background-color', 'white');  
-        r.style.setProperty('--text-color', 'var(--darkBlue)');
+        r.style.setProperty('--background', 'white');  
+        r.style.setProperty('--second', 'var(--darkBlue)');
     }
     else{
-        r.style.setProperty('--background-color', 'var(--darkBlue)');
-        r.style.setProperty('--text-color', 'white');
+        r.style.setProperty('--background', 'var(--darkBlue)');
+        r.style.setProperty('--second', 'white');
     }
 }
 
