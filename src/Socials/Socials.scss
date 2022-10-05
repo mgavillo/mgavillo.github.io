@@ -1,0 +1,29 @@
+#socials-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    bottom: 10px;
+    width: 100px;
+}
+
+.icon {
+    & circle {
+        fill: var(--background-color);
+        stroke: var(--text-color);
+    }
+    & path {
+        fill: var(--text-color);
+    }
+    &:hover {
+        cursor: pointer;
+        & circle {
+            fill: var(--text-color);
+        }
+        & path {
+            fill: var(--background-color);
+        }
+    }
+}
