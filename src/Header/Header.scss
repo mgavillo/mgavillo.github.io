@@ -3,8 +3,8 @@
     width: 100vw;
     height: 70px;
 
-    background-color: var(--background-color);
-    color: var(--text-color);
+    background-color: var(--background);
+    color: var(--second);
 
     font-size: 3vh;
     font-family: "Anton", sans-serif;
@@ -29,12 +29,12 @@
     top: 10px;
     & path {
         fill: #00000000;
-        stroke: var(--text-color);
+        stroke: var(--second);
     }
     &:hover {
         cursor: pointer;
         & path {
-            fill: var(--text-color);
+            fill: var(--second);
         }
     }
 }
