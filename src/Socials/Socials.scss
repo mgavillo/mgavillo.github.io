@@ -7,23 +7,24 @@
     left: 0;
     bottom: 10px;
     width: 100px;
+    z-index: 10;
 }
 
 .icon {
     & circle {
-        fill: var(--background-color);
-        stroke: var(--text-color);
+        fill: var(--background);
+        stroke: var(--second);
     }
     & path {
-        fill: var(--text-color);
+        fill: var(--second);
     }
     &:hover {
         cursor: pointer;
         & circle {
-            fill: var(--text-color);
+            fill: var(--second);
         }
         & path {
-            fill: var(--background-color);
+            fill: var(--background);
         }
     }
 }

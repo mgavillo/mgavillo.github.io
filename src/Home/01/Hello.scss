@@ -1,0 +1,9 @@
+@import "../Home.scss";
+
+#hello-wrapper{
+    background: linear-gradient(to bottom, transparent, var(--background));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 128px;
+}
