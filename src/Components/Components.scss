@@ -1,0 +1,28 @@
+.button {
+    padding: 10px 40px;
+    font-size: 40px;
+    display: inline-flex;
+    p {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+#action-wrapper {
+    border-radius: 20px;
+    background-color: var(--blue);
+    background-clip: padding-box; /* !importanté */
+    border: solid 2px transparent; /* !importanté */
+    position: relative;
+    margin: auto;
+}
+
+#action-wrapper::before{
+    content: "";
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    margin: -2px;
+    z-index: -1;
+    border-radius: inherit; /* !importanté */
+    background: linear-gradient(to left, var(--neonBlue), var(--neonGreen));
+}
