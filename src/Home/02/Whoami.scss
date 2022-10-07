@@ -1,0 +1,98 @@
+#split {
+    display: flex;
+    flex-direction: row;
+}
+
+#infos-container,
+#character-container {
+    width: 50%;
+}
+
+#character-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    #character {
+        width: 400px;
+        height: 450px;
+        background-color: #0038ff;
+        margin-bottom: -50px;
+    }
+}
+
+#character-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+#infos-container {
+// background-color: antiquewhite;
+}
+
+#categories {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    .cat {
+        transition: opacity 0.5s ease-out;
+        margin: 0 -15px;
+        width: 200px;
+        height: 60px;
+        opacity: 40%;
+        position: relative;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background-color: #0038ff;
+        clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%);
+        & > div {
+            background-color: #0038ff;
+
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 196px;
+            height: 56px;
+
+            clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    .selected {
+        opacity: 100%;
+        background: linear-gradient(to left, var(--neonBlue), var(--neonGreen));
+    }
+}
+
+.skill {
+    padding-top: 30px;
+    
+    .bar-container{
+        
+        position: relative;
+        overflow: hidden;
+        margin: 5px 0;
+        background: #041d75;
+        height: 7px;
+        overflow: hidden;
+    }
+    .bar {
+        width: 0px;
+        height: 100%;
+        position: absolute;
+        clip-path: polygon(0% 0%, 100% 0%, calc(100% - 5px) 100%, 0% 100%);
+        background: linear-gradient(to left, var(--neonBlue), var(--neonGreen));
+        transition: width 1s ease-out;  
+    }
+}
