@@ -1,0 +1,88 @@
+#galleryPage {
+    // padding: 50px 0;
+    // padding-top: 70px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    // margin: 0px 150px;
+}
+
+#catWrapper {
+    width: calc(100vw - 300px);
+    padding: 20px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#galleryDivider {
+    width: 30vw;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
+
+hr {
+    background: linear-gradient(90deg, rgba(0, 255, 25, 1) 0%, rgba(0, 255, 255, 1) 100%);
+    height: 1px;
+    border: none;
+    box-shadow: 0px 0px 10px 1px rgba(0, 255, 255, 1);
+}
+#images-wrapper {
+    float: center;
+    margin-top: 10px !important;
+    width: calc(100vw - 300px) !important;
+    line-height: 0;
+    -webkit-columns: 5 300px;
+    -moz-columns: 5 300px;
+    columns: 5 300px;
+    -webkit-column-gap: 20px;
+    -moz-column-gap: 20px;
+    column-gap: 20px;
+}
+
+.imageContainer {
+    width: 100%;
+    height: calc(calc(var(--height) * var(--containerRef)) / var(--width));
+    position: relative;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    transition: all 1s;
+}
+
+.hoveredImage {
+    transform: scale(1.1);
+    filter: grayscale(0.5);
+    cursor: pointer;
+}
+
+.imageData {
+    width: 100%;
+    height: 150px;
+    content: "";
+    background-color: black;
+    bottom: 0;
+    transition: all 1s ease-out;
+    position: absolute;
+}
+.visible {
+    opacity: 1;
+}
+.unvisible {
+    opacity: 0;
+}
+
+.purchase {
+    pointer-events: none;
+    width: 30px;
+    height: 30px;
+    color: var(--basePink);
+}
