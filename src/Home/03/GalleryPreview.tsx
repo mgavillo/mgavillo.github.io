@@ -7,6 +7,7 @@ import React, {
 import { ActionButton } from "../../Components/ActionButton";
 import { Arrow } from "../../Components/Arrow";
 import "./GalleryPreview.scss";
+import images from "../../Gallery/files.json";
 
 const randomIntFromInterval = (min: number, max: number): number => {
   return Math.floor(Math.random() * (max - min + 1) + min);
@@ -16,38 +17,33 @@ var currTransl: Array<any> = [];
 var carouselWidth: number = 0;
 var currentTransl: number = 0;
 export const GalleryPreview: FunctionComponent = () => {
-  const focused = 4;
+  const focused = 3;
   const carousel = createRef<HTMLDivElement>();
   const carouselContainer = createRef<HTMLDivElement>();
   const [translated, setTranslated] = useState<number>(0);
-  const [imageArray, setImageArray] = useState([
-    { index: 0, width: randomIntFromInterval(100, 600) },
-    { index: 1, width: randomIntFromInterval(100, 600) },
-    { index: 2, width: randomIntFromInterval(100, 600) },
-    { index: 3, width: randomIntFromInterval(100, 600) },
-    { index: 4, width: randomIntFromInterval(100, 600) },
-    { index: 5, width: randomIntFromInterval(100, 600) },
-    { index: 6, width: randomIntFromInterval(100, 600) },
-    { index: 7, width: randomIntFromInterval(100, 600) },
-    { index: 8, width: randomIntFromInterval(100, 600) },
-    { index: 9, width: randomIntFromInterval(100, 600) },
-    { index: 10, width: randomIntFromInterval(100, 600) },
-  ]);
+  const [imageArray, setImageArray] = useState<Array<string>>(images);
   const [translating, setTranslating] = useState<boolean>(false);
 
-  useEffect(() => {
-    if (!carousel.current || !carouselContainer.current) return;
+
+  const offsetFirst = (index) =>{
+    if (!carousel.current || !carouselContainer.current || index != imageArray.length - 1 || carouselWidth !== 0) return;
+    console.log(carouselWidth)
+    const children = carousel.current.children[focused] as HTMLImageElement
     const left = carouselContainer.current.getBoundingClientRect().left;
-    const offset =
-      carousel.current.children[focused].getBoundingClientRect().left - left;
+    const offset = children.getBoundingClientRect().left - left ;
+
+    
+    console.log(children)
+    console.log("client width", children.clientWidth)
     carouselWidth = carouselContainer.current.clientWidth;
 
-    let desiredOffset =
-      carouselWidth / 2 - carousel.current.children[focused].clientWidth / 2;
+    let desiredOffset = carouselWidth / 2 - children.clientWidth / 2;
     let calc = desiredOffset - offset;
+
+  
     carousel.current.style.transform = `translateX(${calc}px)`;
     setTranslated(calc);
-  }, []);
+  }
 
   const moveArrayRight = () => {
     let array = [...imageArray];
@@ -71,12 +67,15 @@ export const GalleryPreview: FunctionComponent = () => {
     }, 1000);
   }
   const slideRight = () => {
-    if (!carousel.current || !carouselContainer.current || translating) return;
+    if (!carousel.current || translating) return;
     let carouselStyle = carousel.current.style;
 
     carousel.current.classList.remove("animate");
     //change array but dont move
+    console.log(carousel.current.children[0].clientWidth)
     let moveOffset = carousel.current.children[0].clientWidth + 20;
+    console.log(moveOffset)
+    console.log(carousel.current.children[0].clientWidth)
     moveArrayRight();
     let translate = moveOffset + translated;
     carouselStyle.transform = `translateX(${translate}px)`;
@@ -92,7 +91,7 @@ export const GalleryPreview: FunctionComponent = () => {
   };
 
   const slideLeft = () => {
-    if (!carousel.current || !carouselContainer.current || translating) return;
+    if (!carousel.current || translating) return;
     let carouselStyle = carousel.current.style;
 
     carousel.current.classList.remove("animate");
@@ -112,6 +111,10 @@ export const GalleryPreview: FunctionComponent = () => {
     blockAnims()
   };
 
+
+
+
+  console.log(imageArray)
   return (
     <div id="galleryPreview-wrapper" className="home-wrapper">
       <h2>I love creating new stuff</h2>
@@ -119,15 +122,9 @@ export const GalleryPreview: FunctionComponent = () => {
         <Arrow side="left" size={50} clickAction={slideLeft} />
         <div ref={carouselContainer}>
           <div ref={carousel} id="carousel">
-            {imageArray.map((element) => {
+            {imageArray.map((image, index) => {
               return (
-                <div
-                  className="image"
-                  key={element.index}
-                  style={{ width: element.width }}
-                >
-                  {element.index}
-                </div>
+                <img className="image" alt="" key={index} src={"/images/" + image}  onLoad={() => offsetFirst(index)} />
               );
             })}
           </div>

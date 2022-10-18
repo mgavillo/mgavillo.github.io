@@ -86,7 +86,7 @@ interface PlaneProps {
 export function Plane(props: PlaneProps) {
   const [time, setTime] = useState<number>();
 
-  useFrame(({ clock }) => {
+  useFrame(({clock}) => {
     setTime(clock.elapsedTime);
   });
   return (
@@ -123,7 +123,7 @@ export const Hello: FunctionComponent = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  console.log("wsh--", canvasWrapper);
+  // console.log("wsh--", canvasWrapper);
   return (
     <div id="hello-wrapper" className="home-wrapper">
       <h1>Hello</h1>
