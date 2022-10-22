@@ -78,7 +78,7 @@ export const Whoami: FunctionComponent = () => {
           <div id="character-wrapper">
             <Arrow side="left" size={30} clickAction={decreaseSelected} />
 
-            <div id="canvas-wrapper">
+            <div id="character-canvas-wrapper">
               <Canvas>
                 <Suspense>
                   <ambientLight color="#FFFFFF" intensity={1}/>
