@@ -1,7 +1,14 @@
-import React, { FunctionComponent, useEffect, useState, useRef } from "react";
+import React, {
+  FunctionComponent,
+  useEffect,
+  useState,
+  useRef,
+  Suspense,
+} from "react";
 import { Arrow } from "../../Components/Arrow";
 import "./Whoami.scss";
-
+import { Canvas } from "@react-three/fiber";
+import Character from "./Character";
 interface SkillProps {
   text: string;
   percent: number;
@@ -57,21 +64,32 @@ export const Whoami: FunctionComponent = () => {
   const [selected, setSelected] = useState<number>(0);
 
   const decreaseSelected = () => {
-    selected !== 0 ? setSelected(selected - 1) : setSelected(2)
-  }
+    selected !== 0 ? setSelected(selected - 1) : setSelected(2);
+  };
 
   const increaseSelected = () => {
-    selected !== 2 ? setSelected(selected + 1) : setSelected(0)
-  }
+    selected !== 2 ? setSelected(selected + 1) : setSelected(0);
+  };
   return (
     <div id="whoami-wrapper" className="home-wrapper">
       <h2>My name is Marie</h2>
       <div id="split">
         <div id="character-container">
           <div id="character-wrapper">
-            <Arrow side="left" size={30} clickAction={decreaseSelected}/>
-            <div id="character"></div>
-            <Arrow side="right" size={30} clickAction={increaseSelected}/>
+            <Arrow side="left" size={30} clickAction={decreaseSelected} />
+
+            <div id="canvas-wrapper">
+              <Canvas>
+                <Suspense>
+                  <ambientLight color="#FFFFFF" intensity={1}/>
+                  <spotLight intensity={1} angle={0.1} penumbra={1} position={[10, 15, 10]} castShadow />
+                  <spotLight intensity={1} angle={0.1} penumbra={1} position={[-10, 15, 10]} castShadow />
+
+                  <Character action={selected}/>
+                </Suspense>
+              </Canvas>
+            </div>
+            <Arrow side="right" size={30} clickAction={increaseSelected} />
           </div>
           {selected === 0 && <h3>Creative developer</h3>}
           {selected === 1 && <h3>Graphic designer</h3>}
