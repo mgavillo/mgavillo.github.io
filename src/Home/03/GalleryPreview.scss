@@ -1,16 +1,21 @@
 #galleryPreview-container {
     height: 350px;
-    width: 100%;
+    width: 100vw;
+    margin-left: -120px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    position: relative;
     .left {
-        margin-right: -50px;
+        position: absolute;
+        left: 60px;
         z-index: 10;
     }
     .right {
-        margin-left: -50px;
+        position: absolute;
+
+        right: 60px;
         z-index: 10;
     }
     & > div {
@@ -40,6 +45,13 @@
     }
 }
 
+#galleryPreview-container::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left, var(--background), transparent, var(--background));
+}
 .animate {
     transition: transform 1s ease-in-out;
 
