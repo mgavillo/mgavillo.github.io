@@ -1,0 +1,32 @@
+#grow-wrapper{
+    height: 250vh;
+    width: calc(100vw - 240px);
+    h2{
+        position: sticky;
+        top: 30px;
+    }
+}
+
+#tree{
+    position: sticky;
+    position: -webkit-sticky;
+    width: 400px;
+    height: auto;
+    #branches path{
+        stroke-dashoffset: var(--scroll);
+        stroke-dasharray: 1000px 600px;
+    }
+}
+
+#svg-wrapper{
+    height: 400px;
+    width: 300px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 100px;
+    float: right;
+}
+// .fix{
+//     position: sticky !important;
+//     position: -webkit-sticky;
+// }
