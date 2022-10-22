@@ -21,6 +21,12 @@
     }
 }
 
+#canvas-wrapper{
+    width: 1000px;
+    height: 1500px;
+    margin:  -300px -300px -700px -300px ;
+}
+
 #character-wrapper{
     display: flex;
     flex-direction: row;
