@@ -1,17 +1,17 @@
 #grow-wrapper{
-    height: 250vh;
+    height: 350vh;
     width: calc(100vw - 240px);
+    margin-bottom: 0;
     h2{
         position: sticky;
         top: 30px;
+        padding-bottom: 100vh;
     }
 }
 
 #tree{
-    position: sticky;
-    position: -webkit-sticky;
-    width: 400px;
-    height: auto;
+    // position: sticky;
+    // position: -webkit-sticky;
     #branches path{
         stroke-dashoffset: var(--scroll);
         stroke-dasharray: 1000px 600px;
@@ -19,12 +19,13 @@
 }
 
 #svg-wrapper{
-    height: 400px;
-    width: 300px;
-    position: sticky;
+    margin-left: -120px;
+    width: 100vw;
+    height: calc(1220px * 100vw / 1594px);
+    top: 30px;
     position: -webkit-sticky;
-    top: 100px;
-    float: right;
+    margin-top: -150vh;
+    position: sticky;
 }
 // .fix{
 //     position: sticky !important;

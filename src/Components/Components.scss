@@ -9,6 +9,7 @@
 }
 
 #action-wrapper {
+    width: max-content;
     border-radius: 20px;
     background-color: var(--blue);
     background-clip: padding-box; /* !importanté */
