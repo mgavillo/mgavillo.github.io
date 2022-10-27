@@ -8,18 +8,17 @@ body {
   transition: background-color 0.5s ease-out;
   color: var(--second);
   font-family: "Antonio", sans-serif;
-
 }
 
 body * {
   transition: background-color 0.5s ease-out;
 }
 
-path{
+path {
   transition: all 0.5s ease-out;
 }
 
-circle{
+circle {
   transition: all 0.5s ease-out;
 }
 
@@ -28,7 +27,9 @@ a {
   text-decoration: inherit;
 }
 
-h1, h2, h3{
+h1,
+h2,
+h3 {
   font-family: "Anton", sans-serif;
 }
 
@@ -40,6 +41,12 @@ h2 {
   font-size: 64px;
 }
 
-h3{
+h3 {
   font-size: 30px;
+}
+
+@media (max-width: 60em) {
+  html {
+    font-size: 60%;
+  }
 }

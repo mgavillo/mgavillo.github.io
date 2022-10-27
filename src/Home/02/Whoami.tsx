@@ -5,6 +5,13 @@ import React, {
   useRef,
   Suspense,
 } from "react";
+import {
+  EffectComposer,
+  DepthOfField,
+  Bloom,
+  Noise,
+  Vignette,
+} from "@react-three/postprocessing";
 import { Arrow } from "../../Components/Arrow";
 import "./Whoami.scss";
 import { Canvas } from "@react-three/fiber";
@@ -78,14 +85,27 @@ export const Whoami: FunctionComponent = () => {
           <div id="character-wrapper">
             <Arrow side="left" size={30} clickAction={decreaseSelected} />
 
-            <div id="canvas-wrapper">
-              <Canvas>
+            <div id="character-canvas-wrapper">
+              <Canvas flat linear>
                 <Suspense>
-                  <ambientLight color="#FFFFFF" intensity={1}/>
-                  <spotLight intensity={1} angle={0.1} penumbra={1} position={[10, 15, 10]} castShadow />
-                  <spotLight intensity={1} angle={0.1} penumbra={1} position={[-10, 15, 10]} castShadow />
+                  <ambientLight color="#FFFFFF" intensity={1} />
+                  {/* <spotLight intensity={1} angle={0.1} penumbra={1} position={[10, 15, 10]} castShadow /> */}
+                  <spotLight
+                    intensity={1}
+                    angle={0.1}
+                    penumbra={1}
+                    position={[-10, 15, 10]}
+                    castShadow
+                  />
 
-                  <Character action={selected}/>
+                  <Character action={selected} />
+                  <EffectComposer>
+                    <Bloom
+                      luminanceThreshold={1}
+                      luminanceSmoothing={0.9}
+                      height={300}
+                    />
+                  </EffectComposer>
                 </Suspense>
               </Canvas>
             </div>
