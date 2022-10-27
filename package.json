@@ -6,6 +6,7 @@
   "author": "mgavillo <mgavillo@student.42.fr>",
   "license": "MIT",
   "type": "module",
+  "resolveJsonModule": true,
   "scripts": {
     "start": "webpack serve --port 3000",
     "build": "ts-node-esm tools/getImages.ts && NODE_ENV=production webpack "
@@ -13,6 +14,7 @@
   "dependencies": {
     "@react-three/drei": "^9.36.0",
     "@react-three/fiber": "^8.8.10",
+    "@react-three/postprocessing": "^2.7.0",
     "@types/three": "^0.144.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
