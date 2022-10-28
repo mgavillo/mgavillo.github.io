@@ -2,6 +2,7 @@
   "name": "personnal-website",
   "version": "1.0.0",
   "main": "src/index.js",
+  "homepage": "https://mgavillo.github.io/",
   "repository": "git@github.com:mgavillo/personnal-website.git",
   "author": "mgavillo <mgavillo@student.42.fr>",
   "license": "MIT",
