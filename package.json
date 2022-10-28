@@ -6,10 +6,13 @@
   "author": "mgavillo <mgavillo@student.42.fr>",
   "license": "MIT",
   "scripts": {
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build",
     "start": "webpack serve --port 3000",
     "build": "NODE_ENV=production webpack"
   },
   "dependencies": {
+    "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.55.0",
