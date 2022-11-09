@@ -1,31 +1,64 @@
-#grow-wrapper{
-    height: 250vh;
+#grow-wrapper {
+    height: 350vh;
     width: calc(100vw - 240px);
-    h2{
-        position: sticky;
-        top: 30px;
-    }
+    margin-bottom: 10vw;
+
+    position: relative;
 }
 
-#tree{
-    position: sticky;
-    position: -webkit-sticky;
-    width: 400px;
-    height: auto;
-    #branches path{
+#tree {
+    // position: sticky;
+    // position: -webkit-sticky;
+    #branches path {
         stroke-dashoffset: var(--scroll);
         stroke-dasharray: 1000px 600px;
     }
 }
 
-#svg-wrapper{
-    height: 400px;
-    width: 300px;
+#scroll-wrapper {
     position: sticky;
-    position: -webkit-sticky;
-    top: 100px;
-    float: right;
+    height: 100vh;
+    width: 100vw;
+    margin-left: -120px;
+
+    top: 0;
+
+    h2 {
+        margin-left: 120px;
+        position: absolute;
+        top: 30px;
+    }
+    #svg-wrapper {
+        width: 100vw;
+        height: calc(1220px * 100vw / 1594px);
+        top: 100px;
+        position: absolute;
+    }
+    #background-wrapper {
+        position: absolute;
+        top: -220px;
+        width: 100vw;
+        height: 350vh;
+        background-color: var(--background);
+        z-index: -1;
+        & > * {
+            mix-blend-mode: overlay !important;
+            z-index: -2;
+        }
+        
+    }
+
+    #bacgkround-overlay {
+        position: absolute;
+        top: -220px;
+        width: 100vw;
+        height: 350vh;
+        content: "";
+        z-index: -1;
+        background: linear-gradient(to bottom, var(--background), transparent);
+    }
 }
+
 // .fix{
 //     position: sticky !important;
 //     position: -webkit-sticky;

@@ -1,5 +1,14 @@
-#contact-wrapper{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#contact-wrapper {
+    position: relative;
+    height: 50vh;
+    margin-bottom: 0;
+    #action-wrapper {
+        position: absolute;
+        top: 0;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+    }
+
 }
