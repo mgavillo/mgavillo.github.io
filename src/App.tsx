@@ -6,17 +6,10 @@ import { Socials } from "./Socials/Socials";
 import { Home } from "./Home/Home";
 import { Gallery } from "./Gallery/Gallery";
 import { Contact } from "./Contact/Contact";
-import Waves2 from "./Assets/Waves2";
-import Waves3 from "./Assets/Waves3";
 
 const App: FunctionComponent = () => {
   return (
     <Router>
-      <div id="background-wave-2">
-        <Waves3 />
-        <div id="background-verlay" />
-        {/* <Waves2 /> */}
-      </div>
       <Header />
       <Socials />
       <Routes>
