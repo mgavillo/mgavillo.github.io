@@ -2,12 +2,15 @@
   "name": "personnal-website",
   "version": "1.0.0",
   "main": "src/index.js",
+  "homepage": "https://mgavillo.github.io/",
   "repository": "git@github.com:mgavillo/personnal-website.git",
   "author": "mgavillo <mgavillo@student.42.fr>",
   "license": "MIT",
   "type": "module",
   "resolveJsonModule": true,
   "scripts": {
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -b dev -d ./",
     "start": "webpack serve --port 3000",
     "build": "ts-node-esm tools/getImages.ts && NODE_ENV=production webpack "
   },
@@ -16,6 +19,9 @@
     "@react-three/fiber": "^8.9.1",
     "@react-three/postprocessing": "^2.7.0",
     "@types/three": "^0.144.0",
+
+    "@types/node": "^18.11.0",
+    "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.55.0",
