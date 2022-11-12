@@ -22,11 +22,11 @@ interface SkillProps {
 }
 const Skill = ({ text, percent }: SkillProps) => {
   const bar = React.createRef<HTMLDivElement>();
-
+  
   useEffect(() => {
     if (!bar.current) return;
     bar.current.style.width = `calc( ${percent}% + 10px`;
-  }, []);
+  }, [percent]);
   return (
     <div className="skill">
       <div>{text}</div>
@@ -58,13 +58,22 @@ const Categorie = ({ text, index, setSelected, selected }: CategorieProps) => {
 
 const skills = [
   [
-    { text: "html/css/javascript", percent: 90 },
+    { text: "html/css/javascript", percent: 96 },
     { text: "Typescript", percent: 60 },
     { text: "React", percent: 80 },
     { text: "Three js ", percent: 70 },
   ],
-  [],
-  [],
+  [
+    { text: "Illustrator", percent: 70 },
+    { text: "Photoshop", percent: 40 },
+    { text: "After effects", percent: 50 },
+    { text: "UI design on Figma", percent: 60 },
+  ],
+  [
+    { text: "Modeling", percent: 50 },
+    { text: "Animation", percent: 50 },
+    { text: "Scenography", percent: 60 },
+  ],
 ];
 
 export const Whoami: FunctionComponent = () => {
@@ -100,11 +109,11 @@ export const Whoami: FunctionComponent = () => {
 
                   <Character action={selected} />
                   <EffectComposer>
-                    <Bloom
+                    {/* <Bloom
                       luminanceThreshold={1}
                       luminanceSmoothing={0.9}
                       height={300}
-                    />
+                    /> */}
                   </EffectComposer>
                 </Suspense>
               </Canvas>

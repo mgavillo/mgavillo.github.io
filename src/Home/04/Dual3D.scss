@@ -1,42 +1,61 @@
-#dual3D-wrapper{
+#dual3D-wrapper {
     display: flex;
     flex-direction: column;
     position: relative;
-    h2{
+    h2 {
         margin: 0;
         margin-bottom: -40px;
-        z-index: 1;
+        z-index: 2;
     }
-    #order{
+    #order {
         margin-top: -40px;
         width: 100%;
         text-align: right;
     }
 }
 
-#dual-container{
+#dual-container {
     flex-grow: 1;
     margin: 0;
     position: relative;
-
-}
-.dual-component{
-    width: 55% !important;
-    position: absolute;
-}
-
-#dual-left{
-    left: 0;
     width: 100%;
-    height: 100%;
-    clip-path: polygon(0 0, 100% 0%, 75% 100%, 0 100%);
-}
+    .dual-component {
+        width: 55% !important;
+        position: absolute;
+    }
+    #dual-left {
+        left: 0;
+        width: 100%;
+        height: 100%;
+        clip-path: polygon(0 0, 100% 0%, 75% 100%, 0 100%);
+    }
 
-#dual-right{
-    right: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #052287;
-    clip-path: polygon(25% 0, 100% 0%, 100% 100%, 0 100%);
+    #dual-right {
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-color: #052287;
+        clip-path: polygon(25% 0, 100% 0%, 100% 100%, 0 100%);
+    }
+    @media (max-width: 55em) {
+        .dual-component {
+            width: 100% !important;
+            height: 55% !important;
+        }
+        #dual-left {
+            width: 100%;
+            height: 100%;
+            clip-path: polygon(0 0, 100% 0%, 100% 75%, 0 100%);
+        }
+
+        #dual-right {
+            bottom: 0;
+            top:auto;
+            width: 100%;
+            height: 100%;
+            clip-path: polygon(0% 25%, 100% 0%, 100% 100%, 0 100%);
+        }
+    }
 }

@@ -5,8 +5,9 @@ import "./Contact.scss";
 
 export const Contact: FunctionComponent = () => {
   return (
+    // <></>
     <div id="contact-wrapper" className="home-wrapper">
-      <ActionButton text="contact" />
+      {/* <ActionButton text="contact" /> */}
 
     </div>
   );

@@ -8,6 +8,7 @@ body {
   transition: background-color 0.5s ease-out;
   color: var(--second);
   font-family: "Antonio", sans-serif;
+  overflow-x: hidden;
 }
 
 body * {
@@ -45,8 +46,66 @@ h3 {
   font-size: 30px;
 }
 
-@media (max-width: 60em) {
-  html {
-    font-size: 60%;
+@media (max-width: 55em) {
+  h1 {
+    font-size: 72px;
+  }
+
+  h2 {
+    font-size: 40px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+}
+
+.no-select {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.no-drag {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: var(--blue);
+  background: var(--neonGreen);
+}
+
+::selection {
+  color: var(--blue);
+  background: var(--neonGreen);
+}
+
+#background-wave-2 {
+  position: absolute;
+  // width: max-content;
+  height: 300vh;
+  width: calc(1364px * 300vh / 2046px);
+  top: 100vh;
+  left: 0;
+
+  background-color: var(--background);
+  z-index: -1;
+  & > * {
+    mix-blend-mode: overlay !important;
+    z-index: -2;
+  }
+  &::after {
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 301vh;
+    z-index: 4;
+    position: absolute;
+    background: linear-gradient(to bottom, var(--background), transparent, var(--background));
   }
 }

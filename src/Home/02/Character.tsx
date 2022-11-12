@@ -639,32 +639,12 @@ export default function Character(props: CharacterProps) {
   ) as unknown as GLTFResult;
   const { actions, mixer } = useAnimations(animations, group);
   const { scene } = useThree();
-  useEffect(() => {
-    // if(!actions.all) return
-    // actions.all.play()
-    materials["MAT-rain.eyebrows"].emissiveIntensity = 0;
-    materials["MAT-rain.body"].emissiveIntensity = 0;
-    materials["MAT-rain.hands"].emissiveIntensity = 0;
-    materials["MAT-rain.jeans"].emissiveIntensity = 0;
-    materials["MAT-rain.top"].emissiveIntensity = 0;
-    materials["MAT-rain.eyebrows"].emissiveIntensity = 0;
-    materials["MAT-rain.eyelashes"].emissiveIntensity = 0;
-    materials["MAT-rain.gums"].emissiveIntensity = 0;
-    materials["MAT-rain.teeth"].emissiveIntensity = 0;
-    materials["MAT-rain.hair"].emissiveIntensity = 0;
-    materials["MAT-rain.hairband"].emissiveIntensity = 0;
-    materials["MAT-rain.head"].emissiveIntensity = 0;
-    materials["MAT-rain.shoes"].emissiveIntensity = 0;
-    materials["MAT-rain.metal"].emissiveIntensity = 0;
-    materials["MAT-rain.socks"].emissiveIntensity = 0;
-    materials["MAT-rain.laces"].emissiveIntensity = 0;
-    materials["MAT-rain.eyes"].emissiveIntensity = 0;
-    materials["MAT-rain.hair"].emissiveIntensity = 0;
-    materials["MAT-rain.tongue"].emissiveIntensity = 0;
-    materials["Material.003"].emissiveIntensity = 0;
-    materials["Material.004"].toneMapped = false;
-    console.log(materials["MAT-rain.body"].toneMapped);
-  }, []);
+  // useEffect(() => {
+  //   // if(!actions.all) return
+  //   // actions.all.play()
+  //   actions.all?.play()
+  //   console.log(props.action)
+  // }, [props.action]);
 
   return (
     <group ref={group} {...props} dispose={null}>
@@ -1417,7 +1397,7 @@ export default function Character(props: CharacterProps) {
         <group name="Camera" position={[0, 0.91, 2.03]} rotation={[1.52, 0, 0]}>
           <PerspectiveCamera
             name="Camera_Orientation"
-            makeDefault={false}
+            makeDefault={true}
             far={1000}
             near={0.1}
             fov={60.28}
@@ -1427,7 +1407,7 @@ export default function Character(props: CharacterProps) {
         <group name="Spot001" position={[0, 2.21, -0.47]}>
           <spotLight
             name="Spot001_Orientation"
-            intensity={107.4}
+            intensity={1.4}
             angle={Math.PI / 8}
             penumbra={0.15}
             decay={2}

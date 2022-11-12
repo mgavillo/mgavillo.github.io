@@ -2,6 +2,7 @@ import React, { FunctionComponent, useEffect, useRef } from "react";
 import Svg from "./Svg";
 import "./Grow.scss";
 import Waves1 from "../../Assets/Waves1";
+import { ActionButton } from "../../Components/ActionButton";
 const setProp = (ref: any, prop: any, value: any) =>
   ref.current.style.setProperty(prop, value);
 
@@ -30,13 +31,17 @@ export const Grow: FunctionComponent = () => {
           <br />
           keen to grow
         </h2>
-        <div id="svg-wrapper">
-          <Svg />
+        <div id="svg-container">
+          <div id="svg-wrapper">
+            <Svg />
+          </div>
+          <div id="contact-wrapper">
+            <ActionButton text="contact" />
+          </div>
         </div>
         <div id="background-wrapper">
           <Waves1 />
         </div>
-        <div id="background-overlay" />
       </div>
     </div>
   );

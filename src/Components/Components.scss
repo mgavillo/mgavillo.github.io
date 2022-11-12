@@ -14,7 +14,10 @@
 #action-wrapper {
     width: max-content;
     border-radius: 20px;
-    transition: all 0.3s ease-out; 
+    transition: all 0.3s ease-out;
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
     // transition: scale 0.3s ease-in-out; 
     &:hover{
         scale: 1.1;
