@@ -4,13 +4,16 @@
     align-items: center;
     justify-content: center;
     position: fixed;
-    left: 0;
+    left: 10px;
     bottom: 10px;
-    width: 100px;
+    width: max-content;
+    height: max-content;
     z-index: 10;
 }
 
-.icon {
+.social-icon {
+    width: 62px;
+    height: 62px;
     & circle {
         fill: var(--background);
         stroke: var(--second);
@@ -26,5 +29,19 @@
         & path {
             fill: var(--background);
         }
+    }
+}
+
+.socials-contact-page{
+    flex-direction: row !important;
+    right: 0;
+    // background-color: aqua;
+    // top: 0;
+    // bottom: 0 !important;
+    margin-left: auto;
+    margin-right: auto;
+    .social-icon{
+        width: 75px!important;
+        height: 75px!important
     }
 }
