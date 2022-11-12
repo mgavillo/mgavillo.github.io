@@ -7,6 +7,7 @@
   "author": "mgavillo <mgavillo@student.42.fr>",
   "license": "MIT",
   "type": "module",
+  "resolveJsonModule": true,
   "scripts": {
     "predeploy": "yarn run build",
     "deploy": "gh-pages -b dev -d ./",
@@ -14,8 +15,11 @@
     "build": "ts-node-esm tools/getImages.ts && NODE_ENV=production webpack "
   },
   "dependencies": {
-    "@react-three/drei": "^9.34.1",
-    "@react-three/fiber": "^8.8.9",
+    "@react-three/drei": "^9.36.0",
+    "@react-three/fiber": "^8.9.1",
+    "@react-three/postprocessing": "^2.7.0",
+    "@types/three": "^0.144.0",
+
     "@types/node": "^18.11.0",
     "gh-pages": "^4.0.0",
     "react": "^18.2.0",

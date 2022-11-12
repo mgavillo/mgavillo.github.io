@@ -114,8 +114,7 @@ export const Hello: FunctionComponent = () => {
   }
   useEffect(() => {
     function handleResize() {
-      const ret = getCanvasDimensions();
-      if (ret) setSize(ret);
+      setSize({x: window.innerWidth * 2, y: window.innerHeight * 2});
     }
 
     handleResize();
@@ -123,7 +122,6 @@ export const Hello: FunctionComponent = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // console.log("wsh--", canvasWrapper);
   return (
     <div id="hello-wrapper" className="home-wrapper">
       <h1>Hello</h1>

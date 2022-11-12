@@ -1,6 +1,13 @@
 #split {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    h3 {
+        width: max-content;
+        display: inline;
+    }
 }
 
 #infos-container,
@@ -19,36 +26,95 @@
         background-color: #0038ff;
         margin-bottom: -50px;
     }
+    // .left{
+    //     margin-right: -50px;
+    //     z-index: 3;
+    // }
+    // .right{
+    //     margin-left: -50px;
+    //     z-index: 3;
+
+    // }
 }
 
-#character-wrapper{
+#character-wrapper {
     display: flex;
     flex-direction: row;
     align-items: center;
-
+    // z-index: 1;
+    #character-canvas-wrapper {
+        background-color: var(--background);
+        height: 500px;
+        width: 330px;
+        border: solid 2px var(--blue);
+        border-radius: 25px;
+        box-shadow: 0px 0px 4px 2px var(--blue);
+    }
+    @media (max-width: 70em) {
+        margin-top: 40px;
+        #character-canvas-wrapper {
+            height: 400px;
+            width: 260px;
+        }
+        .left, .right{
+            z-index: 4;
+        }
+        
+    }
 }
 #infos-container {
-// background-color: antiquewhite;
+    min-width: 150px;
+    height: 70vh;
+    @media (max-width: 70em) {
+        transform: scale(70%);
+        position: absolute;
+        top: -10.5vh !important;
+        padding-left: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 400px;
+        .bar-container {
+            width: 30%;
+            mix-blend-mode: overlay;
+        }
+        .cat {
+            z-index: 0;
+        }
+        .skill {
+            margin-left: -30px;
+            position: static;
+            z-index: 4;
+        }
+    }
+    // background-color: antiquewhite;
 }
 
 #categories {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: start;
+    align-items: start;
     width: 100%;
+    // background-color: var(--background);
+    padding: 0 30px 30px 30px;
+    margin-left: -20px;
     .cat {
         transition: opacity 0.5s ease-out;
-        margin: 0 -15px;
-        width: 200px;
+        margin: 0 -2.5%;
+        width: 30%;
         height: 60px;
+        opacity: 70%;
         opacity: 40%;
         position: relative;
-
+        // mix-blend-mode: overlay;
+        // mix-blend-mode: soft-light;
+        // mix-blend-mode:lighten;
         display: flex;
         align-items: center;
         justify-content: center;
 
-        background-color: #0038ff;
+        box-shadow: 0px 0px 10px 2px #04ff00;
+
         clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%);
         & > div {
             background-color: #0038ff;
@@ -56,10 +122,11 @@
             position: absolute;
             top: 2px;
             left: 2px;
-            width: 196px;
+            width: 98%;
             height: 56px;
 
-            clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%);
+            // clip-path: polygon(21% 0%, 98% 0%, 78% 100%, 0% 103%);
+            // box-shadow: 0px 0px 10px 2px #f700ff;
 
             display: flex;
             align-items: center;
@@ -71,28 +138,34 @@
     }
     .selected {
         opacity: 100%;
+        mix-blend-mode: hard-light;
         background: linear-gradient(to left, var(--neonBlue), var(--neonGreen));
     }
 }
 
 .skill {
-    padding-top: 30px;
-    
-    .bar-container{
-        
+    padding-top: 10px;
+    .bar-container {
+        // mix-blend-mode:hard-light;
         position: relative;
         overflow: hidden;
         margin: 5px 0;
         background: #041d75;
         height: 7px;
         overflow: hidden;
+        box-shadow: 0px 0px 6px 2px #0038ff;
+        @media (max-width: 70em) {
+            opacity: 60%;
+        }
     }
     .bar {
+        box-shadow: 0px 0px 10px 2px var(--neonBlue);
+
         width: 0px;
         height: 100%;
         position: absolute;
         clip-path: polygon(0% 0%, 100% 0%, calc(100% - 5px) 100%, 0% 100%);
         background: linear-gradient(to left, var(--neonBlue), var(--neonGreen));
-        transition: width 1s ease-out;  
+        transition: width 1s ease-out;
     }
 }

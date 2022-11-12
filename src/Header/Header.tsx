@@ -28,7 +28,7 @@ export const Header: FunctionComponent = () => {
         <Link to="/Gallery">Gallery</Link>
         <Link to="/Contact">Contact</Link>
       </div>
-      <div id="night-switch" onClick={onSwitchClick}>{night ? <Sun /> : <Moon />}</div>
+      {/* <div id="night-switch" onClick={onSwitchClick}>{night ? <Sun /> : <Moon />}</div> */}
     </nav>
   );
 };
