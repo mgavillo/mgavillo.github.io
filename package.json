@@ -9,10 +9,11 @@
   "type": "module",
   "resolveJsonModule": true,
   "scripts": {
-    "predeploy": "yarn run build",
-    "deploy": "gh-pages -b dev -d ./",
-    "start": "webpack serve --port 3000",
-    "build": "ts-node-esm tools/getImages.ts && NODE_ENV=production webpack "
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "images": "ts-node-esm tools/getImages.ts"
   },
   "dependencies": {
     "@emailjs/browser": "^3.9.1",
@@ -46,5 +47,17 @@
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.11.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
