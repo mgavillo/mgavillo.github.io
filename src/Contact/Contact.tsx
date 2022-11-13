@@ -66,6 +66,7 @@ export const Contact: FunctionComponent = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
+    console.log(process.env.REACT_EMAIL_SERVICE_ID, process.env.REACT_EMAIL_TEMPLATE_ID, process.env.REACT_EMAIL_PUB_KEY)
     if(emailSent === -1) return
     setEmailSent(-1)
     emailjs
