@@ -7,8 +7,9 @@
     color: var(--second);
 
     font-size: 3vh;
-    font-family: "Anton", sans-serif;
     position: relative;
+    font-family: 'Anton', sans-serif;
+    z-index: 1;
 }
 
 #header-content {
@@ -18,6 +19,7 @@
     align-items: center;
     width: 100%;
     height: 100%;
+
     & > * {
         margin: 0 20px;
     }

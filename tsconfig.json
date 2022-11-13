@@ -11,6 +11,8 @@
       "strict": true,
       "sourceMap": true,
       "target": "esnext",
+      "noImplicitAny": false,
+      "resolveJsonModule": true,
     },
     "exclude": [
       "node_modules"

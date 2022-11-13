@@ -1,10 +1,14 @@
 import React, { useState, FunctionComponent } from "react";
 
 export const Instagram: FunctionComponent = () => {
+  const onInstaClick = () => {
+    window?.open("https://www.instagram.com/_swaggymarie/", "_blank")?.focus();
+  };
+  
   return (
     <svg
-      width="62"
-      height="62"
+      className="social-icon"
+      onClick={onInstaClick}
       viewBox="0 0 62 62"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

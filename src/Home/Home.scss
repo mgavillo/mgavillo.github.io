@@ -1,5 +1,13 @@
 .home-wrapper{
     height: calc(100vh - 70px);
     width: calc(100vw - 240px);
-    margin:0 120px 200px 120px;
+    margin:0 120px 350px 120px;
+}
+
+@media (max-width: 55em){
+    .home-wrapper{
+        margin:0 30px 150px 30px;
+        height: calc(100vh - 70px);
+        width: calc(100vw - 60px);
+    }
 }

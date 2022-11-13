@@ -6,23 +6,38 @@
   "repository": "git@github.com:mgavillo/personnal-website.git",
   "author": "mgavillo <mgavillo@student.42.fr>",
   "license": "MIT",
+  "type": "module",
+  "resolveJsonModule": true,
   "scripts": {
     "predeploy": "yarn run build",
     "deploy": "gh-pages -b dev -d ./",
     "start": "webpack serve --port 3000",
-    "build": "NODE_ENV=production webpack"
+    "build": "ts-node-esm tools/getImages.ts && NODE_ENV=production webpack "
   },
   "dependencies": {
+    "@emailjs/browser": "^3.9.1",
+    "@react-three/drei": "^9.36.0",
+    "@react-three/fiber": "^8.9.1",
+    "@react-three/postprocessing": "^2.7.0",
+    "@types/node": "^18.11.0",
+    "@types/three": "^0.144.0",
+    "dotenv": "^16.0.3",
     "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-scripts": "^5.0.1",
     "sass": "^1.55.0",
-    "typescript": "^4.8.4"
+    "three": "^0.145.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4",
+    "vercel": "^28.4.17"
   },
   "devDependencies": {
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
+    "@types/three": "^0.144.0",
     "css-loader": "^6.7.1",
+    "dotenv-webpack": "^8.0.1",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.1",
     "react-router-dom": "^6.4.1",

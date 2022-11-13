@@ -1,0 +1,209 @@
+#contact-page-wrapper {
+    width: 100vw;
+    height: calc(100vh - 70px);
+    position: relative;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--background);
+    overflow: hidden;
+    #wave-background-wrapper {
+        mix-blend-mode: overlay;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 100vw;
+        width: 150vh;
+        transform-origin: bottom left;
+        transform: rotate(90deg) translateX(-100%);
+        -moz-transform-origin: bottom left;
+        -moz-transform: rotate(90deg) translateX(-100%);
+        z-index: -4;
+    }
+}
+
+input[type="text"],
+textarea {
+    background-color: var(--background);
+    background-color: #061340a2;
+    border: 1px solid transparent;
+    box-shadow: 0 0 5px #eee;
+    overflow: auto;
+    outline: none;
+    border-radius: 5px;
+    color: white;
+    padding: 5px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+    resize: none;
+}
+
+input:focus,
+input:active,
+textarea:focus {
+    border: 1px solid var(--neonBlue);
+    // background-color: transparent;
+}
+
+#card {
+    z-index: 50;
+    font-size: 14px;
+    width: 700px;
+    height: 450px;
+    position: relative;
+    background: #061340a2;
+    margin-top: -100px;
+    font-family: "Reenie Beanie", cursive;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
+    #card-background {
+        z-index: -1;
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+        border-radius: inherit;
+        background: linear-gradient(
+            30deg,
+            var(--neonBlue) 24%,
+            var(--neonPink) 29%,
+            var(--blue) 33%,
+            var(--second) 39%,
+            var(--background) 45%
+        );
+        background-position: var(--dp);
+        background-size: 400% 400%;
+        transition: all 0.1s;
+
+        opacity: 30%;
+        mix-blend-mode: overlay;
+    }
+
+    #action-wrapper {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+
+    transition: all 0.1s;
+    display: flex;
+    align-items: center;
+    &:hover {
+        box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
+        transform: scale(1.1) rotateX(var(--dx)) rotateY(var(--dy));
+        perspective: 10000px;
+    }
+
+    #card-content,
+    #card-to {
+        width: 50%;
+        height: 100%;
+
+        padding: 30px;
+        div,
+        textarea {
+            padding: 10px;
+        }
+    }
+    #card-content {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+    }
+    #card-to {
+        #img-wrapper {
+            height: 30%;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            & > div {
+                height: 80%;
+                width: 25%;
+                border: 0.3px solid var(--neonBlue);
+                box-shadow: 0 0 2px var(--neonGreen);
+
+                margin-right: 20px;
+                border-radius: 10px;
+            }
+        }
+        #to-infos {
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            justify-content: flex-start;
+            #my-mail{
+                margin-bottom: -20px;
+                margin-left: 10px;
+            }
+        }
+    }
+    #send-button {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+
+        font-size: 20px;
+        padding: 5px 10px;
+        border: 1px solid white;
+        color: white;
+        border-radius: 10px;
+        transition: all 1s;
+        background: transparent;
+
+    }
+    .send-abled{
+        border: 1px solid var(--neonBlue) !important;
+        box-shadow: 0 0 5px var(--neonGreen);
+        text-shadow: 0 0 2px var(--neonGreen);
+        color: var(--neonBlue) !important;
+
+        &:hover {
+            cursor: pointer;
+            box-shadow: 0 0 10px var(--neonGreen), 0 0 2px var(--neonBlue);
+            mix-blend-mode: hard-light;
+            font-size: 24px;
+        }
+    }
+    .largeInput {
+        margin-left: 10px;
+        width: 300px;
+        height: 30%;
+    }
+    .email-input {
+        width: 310px;
+    }
+    .name-input {
+        width: 273px;
+    }
+    .vertical-divider,
+    .horizontal-divider {
+        background-color: var(--neonBlue);
+        border-radius: 5px;
+    }
+    .vertical-divider {
+        height: 50%;
+        width: 1px;
+    }
+    .horizontal-divider {
+        width: 200px;
+        margin-bottom: 20px;
+    }
+}
+
+#social-text{
+    position: absolute;
+    bottom: 80px;
+}
