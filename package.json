@@ -9,11 +9,10 @@
   "type": "module",
   "resolveJsonModule": true,
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "images": "ts-node-esm tools/getImages.ts"
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -b dev -d ./",
+    "start": "webpack serve --port 3000",
+    "build": "ts-node-esm tools/getImages.ts && NODE_ENV=production webpack "
   },
   "dependencies": {
     "@emailjs/browser": "^3.9.1",
