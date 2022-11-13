@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { FunctionComponent, useState, useEffect, useRef }  from 'react';
 import images from "./files.json"
 import "./Gallery.scss"
@@ -66,12 +65,5 @@ export const Gallery:FunctionComponent = () => {
                 }
             </div>
         </div>
-=======
-import React, { FunctionComponent }  from 'react';
-
-export const Gallery:FunctionComponent = () => {
-    return(
-        <></>
->>>>>>> 44ce0450cacafcc2fb1e72f1312ce656ea40bf60
     )
 }

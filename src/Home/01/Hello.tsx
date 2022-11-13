@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, {
   FunctionComponent,
   useState,
@@ -6,7 +5,6 @@ import React, {
   useEffect,
   createRef,
 } from "react";
-import "./Hello.scss";
 import {
   Canvas,
   useFrame,
@@ -17,6 +15,8 @@ import {
 } from "@react-three/fiber";
 import { shaderMaterial } from "@react-three/drei";
 import * as THREE from "three";
+import "../Home.scss";
+import "./Hello.scss";
 
 const vertShader = `
 varying vec4 p;
@@ -87,7 +87,7 @@ interface PlaneProps {
 export function Plane(props: PlaneProps) {
   const [time, setTime] = useState<number>();
 
-  useFrame(({clock}) => {
+  useFrame(({ clock }) => {
     setTime(clock.elapsedTime);
   });
   return (
@@ -115,7 +115,7 @@ export const Hello: FunctionComponent = () => {
   }
   useEffect(() => {
     function handleResize() {
-      setSize({x: window.innerWidth * 2, y: window.innerHeight * 2});
+      setSize({ x: window.innerWidth * 2, y: window.innerHeight * 2 });
     }
 
     handleResize();
@@ -126,7 +126,7 @@ export const Hello: FunctionComponent = () => {
   return (
     <div id="hello-wrapper" className="home-wrapper">
       <h1>Hello</h1>
-      <div id="canvas-wrapper" ref={canvasWrapper} >
+      <div id="canvas-wrapper" ref={canvasWrapper}>
         <Canvas>
           <Plane size={size} />
         </Canvas>
@@ -134,14 +134,3 @@ export const Hello: FunctionComponent = () => {
     </div>
   );
 };
-=======
-import React, { FunctionComponent }  from 'react';
-import "./Hello.scss"
-export const Hello:FunctionComponent = () => {
-    return(
-        <div id="hello-wrapper" className='home-wrapper'>
-            <h1>Hello</h1>
-        </div>
-    )
-}
->>>>>>> 44ce0450cacafcc2fb1e72f1312ce656ea40bf60

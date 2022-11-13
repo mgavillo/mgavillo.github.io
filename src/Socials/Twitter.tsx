@@ -9,11 +9,6 @@ export const Twitter: FunctionComponent = () => {
     <svg
       className="social-icon"
       onClick={onTwitterClick}
-<<<<<<< HEAD
-=======
-      width="62"
-      height="62"
->>>>>>> 44ce0450cacafcc2fb1e72f1312ce656ea40bf60
       viewBox="0 0 62 62"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

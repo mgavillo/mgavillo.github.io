@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { FunctionComponent, useEffect, useRef, useState } from "react";
 import Waves2 from "../Assets/Waves2";
 import { ActionButton } from "../Components/ActionButton";
@@ -160,12 +159,3 @@ export const Contact: FunctionComponent = () => {
     </div>
   );
 };
-=======
-import React, { FunctionComponent }  from 'react';
-
-export const Contact:FunctionComponent = () => {
-    return(
-        <></>
-    )
-}
->>>>>>> 44ce0450cacafcc2fb1e72f1312ce656ea40bf60

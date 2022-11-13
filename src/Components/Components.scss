@@ -15,9 +15,7 @@
     width: max-content;
     border-radius: 20px;
     transition: all 0.3s ease-out;
-    -webkit-user-select: none; 
-    -ms-user-select: none; 
-    user-select: none; 
+ 
     // transition: scale 0.3s ease-in-out; 
     &:hover{
         scale: 1.1;
@@ -42,22 +40,8 @@
     }
 }
 
-#white {
-    border: 1px solid;
-    font-family: "Antonio", sans-serif;
-    padding: 5px 10px;
-    margin: 5px;
-    transition: background-color 0.5s ease-out, color 0.5s ease-out, border-color 0.5s ease-out;
-    background-color: var(--background);
-    border-color: var(--second);
-    color: var(--second);
-    font-size: 20px;
-    &:hover {
-      background-color: var(--second);
-      color: var(--background);
-      cursor: pointer;
-    }
-  }
+
+
 
 .arrow {
     border: solid var(--neonBlue);
