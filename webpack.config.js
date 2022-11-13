@@ -3,7 +3,7 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import DotenvPlugin from "dotenv-webpack"
 
-module.exports = {
+export const module = {
   mode: prod ? "production" : "development",
   entry: "./src/index.tsx",
   output: {
