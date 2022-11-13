@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, {
   FunctionComponent,
   useState,
@@ -133,3 +134,14 @@ export const Hello: FunctionComponent = () => {
     </div>
   );
 };
+=======
+import React, { FunctionComponent }  from 'react';
+import "./Hello.scss"
+export const Hello:FunctionComponent = () => {
+    return(
+        <div id="hello-wrapper" className='home-wrapper'>
+            <h1>Hello</h1>
+        </div>
+    )
+}
+>>>>>>> 44ce0450cacafcc2fb1e72f1312ce656ea40bf60

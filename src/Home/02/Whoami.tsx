@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, {
   FunctionComponent,
   useEffect,
@@ -153,3 +154,18 @@ export const Whoami: FunctionComponent = () => {
     </div>
   );
 };
+=======
+import React, { FunctionComponent }  from 'react';
+import "./Whoami.scss"
+
+export const Whoami:FunctionComponent = () => {
+    return(
+        <div id="whoami-wrapper" className='home-wrapper'>
+            <h2>My name is Marie</h2>
+            <div>
+
+            </div>
+        </div>
+    )
+}
+>>>>>>> 44ce0450cacafcc2fb1e72f1312ce656ea40bf60

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { FunctionComponent } from "react";
 import Waves1 from "../../Assets/Waves1";
 import { ActionButton } from "../../Components/ActionButton";
@@ -12,3 +13,15 @@ export const Contact: FunctionComponent = () => {
     </div>
   );
 };
+=======
+import React, { FunctionComponent }  from 'react';
+import "./Contact.scss";
+
+export const Contact:FunctionComponent = () => {
+    return(
+        <div id="contact-wrapper" className='home-wrapper'>
+           <button>CONTACT</button>
+        </div>
+    )
+}
+>>>>>>> 44ce0450cacafcc2fb1e72f1312ce656ea40bf60
